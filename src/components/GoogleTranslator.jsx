@@ -188,6 +188,14 @@ const GoogleTranslate = () => {
           color: #fff !important;
         }
 
+        /* Keep the Google gadget hidden visually but accessible to scripts */
+        .goog-te-gadget {
+          position: absolute !important;
+          left: -9999px !important;
+          top: -9999px !important;
+          visibility: hidden !important;
+        }
+
         .goog-logo-link {
           display: none !important; /* Hide Google logo */
         }
