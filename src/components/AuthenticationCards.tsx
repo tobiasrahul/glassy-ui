@@ -407,8 +407,8 @@ const AuthenticationCardDetailsPage: React.FC = () => {
             <div className='lg:w-2/3'>
               <h3 className='text-xl font-semibold mb-4 text-black'>Code</h3>
               <div className='relative'>
-                <pre className='bg-sky-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words'>
-                  <code>
+                <pre className='notranslate bg-sky-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words'>
+                  <code className='notranslate'>
                     {` const LoginCardExample: React.FC = () => (
     <div
       className="relative p-8 rounded-xl overflow-hidden"
@@ -538,8 +538,8 @@ const AuthenticationCardDetailsPage: React.FC = () => {
             <div className='lg:w-2/3'>
               <h3 className='text-xl font-semibold mb-4 text-black'>Code</h3>
               <div className='relative'>
-                <pre className='bg-sky-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words'>
-                  <code>
+                <pre className='notranslate bg-sky-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words'>
+                  <code className='notranslate'>
                     {` const SignUpCardExample: React.FC = () => (
     <div
       className="relative p-8 rounded-xl overflow-hidden"

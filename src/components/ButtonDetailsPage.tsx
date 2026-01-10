@@ -109,7 +109,7 @@ function Example() {
         <div className={`${getGlassyClasses()} p-8 mb-8 relative`}>
           <h2 className='text-3xl font-bold mb-6 text-black'>Basic Usage</h2>
           <div className='relative'>
-            <pre className='bg-green-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-green-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
               {basicUsageCode}
             </pre>
             <CopyButton text={basicUsageCode} codeKey='basicUsage' />
@@ -256,7 +256,7 @@ function Example() {
               >
                 Themed Button
               </button>
-              <pre className='bg-green-100 text-black p-6 rounded-lg mt-4 overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+              <pre className='notranslate bg-green-100 text-black p-6 rounded-lg mt-4 overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
                 {themedButtonCode}
               </pre>
               <CopyButton text={themedButtonCode} codeKey='themedButton' />
@@ -276,7 +276,7 @@ function Example() {
             Alert!
           </button>
           <div className='relative mt-8'>
-            <pre className='bg-green-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-green-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
               {alertButtonCode}
             </pre>
             <CopyButton text={alertButtonCode} codeKey='alertButton' />
@@ -296,7 +296,7 @@ function Example() {
             Full Width Button
           </button>
           <div className='relative mt-8'>
-            <pre className='bg-green-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-green-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
               {fullWidthButtonCode}
             </pre>
             <CopyButton text={fullWidthButtonCode} codeKey='fullWidthButton' />

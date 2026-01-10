@@ -19,6 +19,7 @@ import SliderDetailsPage from './components/SliderDetailsPage';
 import DonationPage from './components/DonationPage';
 import AboutUsPage from './components/AboutUsPage';
 import Header from './components/Header';
+import GoogleTranslate from './components/GoogleTranslator';
 import BackToTopDetailsPage from './components/BackToTopDetailsPage';
 import DropdowndetailsPage from './components/DropdowndetailsPage';
 import AuthenticationCard from './components/AuthenticationCards';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Header />
+      <GoogleTranslate />
       <Routes>
         <Route path='/' element={<GlassyUILandingPage />} />
         <Route path='/components' element={<GlassyUIComponentsPage />} />

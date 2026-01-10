@@ -133,7 +133,7 @@ const DropdownMenuDetailsPage: React.FC = () => {
         <div className={`${getGlassyClasses()} p-8 mb-8 relative`}>
           <h2 className='text-3xl font-bold mb-6 text-black'>Basic Usage</h2>
           <div className='relative'>
-            <pre className='bg-zinc-400 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-zinc-400 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
               {basicUsageCode}
             </pre>
             <CopyButton text={basicUsageCode} codeKey='basicUsage' />
@@ -155,7 +155,7 @@ const DropdownMenuDetailsPage: React.FC = () => {
             Selected: {selectedOption}
           </p>
           <div className='relative mt-8'>
-            <pre className='bg-zinc-400 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-zinc-400 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
               {dropdownExampleCode}
             </pre>
             <CopyButton text={dropdownExampleCode} codeKey='dropdownExample' />

@@ -240,7 +240,7 @@ const Toast: React.FC<ToastProps> = ({ id, title, message, autoDismiss = 9000, t
           <h2 className='text-3xl font-bold mt-6 mb-6 text-black'>Main App</h2>
           {/* Basic Usage Code Block */}
           <div className='relative mb-4'>
-            <pre className='bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
               {basicUsage}
             </pre>
             <CopyButton text={basicUsage} codeKey='basicUsage' />
@@ -249,7 +249,7 @@ const Toast: React.FC<ToastProps> = ({ id, title, message, autoDismiss = 9000, t
             Toast Generator Component
           </h2>
           <div className='relative mb-4'>
-            <pre className='bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
               {generatorCode}
             </pre>
             <CopyButton text={generatorCode} codeKey='basicUsage' />
@@ -258,14 +258,14 @@ const Toast: React.FC<ToastProps> = ({ id, title, message, autoDismiss = 9000, t
             Toast Component
           </h2>
           <div className='relative mb-4'>
-            <pre className='bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
               {toastCode}
             </pre>
             <CopyButton text={toastCode} codeKey='basicUsage' />
           </div>
           <h2 className='text-3xl font-bold mb-6 text-black'>Aniamtion CSS</h2>
           <div className='relative mb-4'>
-            <pre className='bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-cyan-100 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:p-2 max-sm:text-[0.55rem]'>
               {animationCSS}
             </pre>
             <CopyButton text={animationCSS} codeKey='basicUsage' />

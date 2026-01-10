@@ -107,7 +107,7 @@ const BadgeDetailPage: React.FC = () => {
         {/* Basic Usage */}
         <div className="p-6 mb-8 relative">
           <h2 className="text-2xl text-gray-100 font-bold mb-4">Basic Usage</h2>
-          <pre className="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto">
+          <pre className="notranslate bg-gray-800 text-white p-4 rounded-lg overflow-x-auto">
             {`<div
   style={{
     backgroundColor: '#007bff',

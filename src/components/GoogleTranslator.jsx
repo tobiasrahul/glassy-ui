@@ -1,6 +1,41 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GoogleTranslate = () => {
+  const [currentLang, setCurrentLang] = useState(
+    typeof window !== 'undefined' ? (localStorage.getItem('preferredLang') || 'en') : 'en'
+  );
+
+  const changeLanguage = lang => {
+    try {
+      // Save preference
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('preferredLang', lang);
+      }
+
+      const apply = () => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event('change'));
+        } else {
+          // Retry shortly if the widget hasn't initialized yet
+          setTimeout(() => apply(), 500);
+        }
+      };
+
+      apply();
+    } catch (e) {
+      // ignore
+    }
+  };
+
+  // Re-apply translation when preferred language changes (handles SPA navigation)
+  useEffect(() => {
+    if (currentLang && currentLang !== 'en') {
+      changeLanguage(currentLang);
+    }
+  }, [currentLang]);
+
   useEffect(() => {
     window.googleTranslateInit = () => {
       if (!window.google?.translate?.TranslateElement) {
@@ -45,6 +80,23 @@ const GoogleTranslate = () => {
         });
       }
     };
+
+    // Ensure code snippets are not translated: add `notranslate` to all <pre> and <code> elements
+    const applyNotranslateToCode = () => {
+      try {
+        document.querySelectorAll('pre, code').forEach(el => {
+          el.classList.add('notranslate');
+        });
+      } catch (e) {
+        // ignore
+      }
+    };
+
+    // Apply initial and observe future DOM changes (single page app navigation)
+    applyNotranslateToCode();
+    const observer = new MutationObserver(() => applyNotranslateToCode());
+    observer.observe(document.body, { childList: true, subtree: true });
+
     loadGoogleTranslateScript();
 
     if (window.google && window.google.translate) {
@@ -52,66 +104,92 @@ const GoogleTranslate = () => {
     }
 
     return () => {
-      // Cleanup logic if necessary
+      // Cleanup observer
+      try {
+        observer.disconnect();
+      } catch (e) {
+        // ignore
+      }
     };
   }, []);
 
   return (
-    <div id='google_element' className='google-translate-container'>
+    <div className='google-translate-wrapper'>
+      <div className='google-translate-container'>
+        <select
+          id='customLangSelect'
+          className='translate-select'
+          value={currentLang}
+          onChange={e => {
+            const lang = e.target.value;
+            setCurrentLang(lang);
+            changeLanguage(lang);
+          }}
+          aria-label='Select language'
+        >
+          <option value='en'>English</option>
+          <option value='hi'>Hindi</option>
+          <option value='pa'>Punjabi</option>
+          <option value='sa'>Sanskrit</option>
+          <option value='mr'>Marathi</option>
+          <option value='ur'>Urdu</option>
+          <option value='bn'>Bengali</option>
+          <option value='es'>Spanish</option>
+          <option value='ja'>Japanese</option>
+          <option value='ko'>Korean</option>
+          <option value='zh-CN'>Chinese (Simplified)</option>
+          <option value='nl'>Dutch</option>
+          <option value='fr'>French</option>
+          <option value='de'>German</option>
+          <option value='it'>Italian</option>
+          <option value='ta'>Tamil</option>
+          <option value='te'>Telugu</option>
+          <option value='gu'>Gujarati</option>
+        </select>
+
+        {/* Google widget target */}
+        <div id='google_element' />
+      </div>
+
       <style jsx>{`
-        .goog-te-combo {
-          background-color: #272d39; /* Soft blue background */
-          border-radius: 0.4rem; /* Rounded corners */
-          padding: 0.5rem;
-          font-size: 1rem;
-          transition: all 0.3s ease-in-out; /* Smooth transition */
-          outline: none;
-          font-weight: 500; /* Tailwind: font-medium */
-          cursor: pointer;
-          text-align: center;
-          color: #fff;
+        .google-translate-wrapper {
+          z-index: 9999;
         }
 
-        .goog-te-combo:hover {
-          background-color: #272d31; /* Lighter blue on hover */
-          border-color: #0056b3; /* Darker blue on hover */
-          color: #eee; /* Darker blue text */
-          transform: scale(1.02); /* Slight scale effect */
+        .google-translate-container {
+          position: fixed;
+          left: 12px; /* slight adjustment */
+          top: 12px;  /* slight adjustment */
+          z-index: 9999;
+          display: flex;
+          gap: 8px;
+          align-items: center;
+        }
+
+        .translate-select {
+          background-color: #272d39;
+          color: #fff;
+          border-radius: 0.4rem;
+          padding: 0.4rem 0.6rem;
+          font-size: 0.95rem;
+          outline: none;
+          font-weight: 500;
+          cursor: pointer;
+          border: 0;
+        }
+
+        .translate-select:focus {
+          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.12);
+        }
+
+        /* Keep Google widget styles but slightly adjusted */
+        .goog-te-combo {
+          background-color: transparent !important;
+          color: #fff !important;
         }
 
         .goog-logo-link {
           display: none !important; /* Hide Google logo */
-        }
-
-        .goog-te-gadget {
-          color: transparent !important;
-        }
-
-        .goog-te-gadget > span > a {
-          display: none !important;
-        }
-
-        .goog-te-gadget .goog-te-combo {
-          color: #fff !important; /* Blue text */
-        }
-
-        .goog-te-gadget .goog-te-combo:hover {
-          color: silver !important; /* Darker blue text on hover */
-        }
-
-        #google_translate_element
-          .goog-te-gadget-simple
-          .goog-te-menu-value
-          span:first-child {
-          display: none;
-        }
-
-        #google_translate_element
-          .goog-te-gadget-simple
-          .goog-te-menu-value:before {
-          content: 'Translate'; /* Custom text */
-          color: #007bff; /* Blue text */
-          font-weight: 600; /* Slightly bolder */
         }
 
         .goog-te-banner-frame {
@@ -127,34 +205,16 @@ const GoogleTranslate = () => {
           box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1); /* Soft blue shadow */
         }
 
-        /* Customize the iframe */
-        .skiptranslate > iframe {
-          height: 0 !important;
-          border-style: none;
-          box-shadow: none;
-        }
+        @media (max-width: 640px) {
+          .google-translate-container {
+            left: 8px;
+            top: 8px;
+          }
 
-        body {
-          position: relative !important;
-          top: 0 !important;
-          background-color: #f8faff; /* Light blue background for website */
-          color: #333; /* Default text color */
-          font-family: 'Inter', sans-serif; /* Clean font for readability */
-        }
-
-        /* Extra hover effects for any clickable elements */
-        a,
-        button {
-          transition:
-            color 0.3s ease-in-out,
-            background-color 0.3s ease-in-out,
-            transform 0.3s ease;
-        }
-
-        a:hover,
-        button:hover {
-          color: #0056b3; /* Darker blue on hover */
-          transform: translateY(-3px); /* Slight lift on hover */
+          .translate-select {
+            padding: 0.35rem 0.5rem;
+            font-size: 0.85rem;
+          }
         }
       `}</style>
     </div>

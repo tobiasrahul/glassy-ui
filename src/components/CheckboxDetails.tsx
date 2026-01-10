@@ -140,7 +140,7 @@ const CheckboxDetailsPage: React.FC = () => {
         <div className={`${getGlassyClasses()} p-6 mb-14 relative`}>
           <h2 className='text-3xl font-bold mb-6 text-white'>Basic Usage</h2>
           <div className='relative'>
-            <pre className='bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
               {basicUsageCode}
             </pre>
             <CopyButton text={basicUsageCode} codeKey='basicUsage' />
@@ -168,7 +168,7 @@ const CheckboxDetailsPage: React.FC = () => {
               onChange={() => setIsChecked(!isChecked)}
               label='Custom Styled Checkbox'
             />
-            <pre className='bg-gray-800 text-white p-6 rounded-lg mt-4 overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-gray-800 text-white p-6 rounded-lg mt-4 overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
               {customizableCheckboxCode}
             </pre>
             <CopyButton

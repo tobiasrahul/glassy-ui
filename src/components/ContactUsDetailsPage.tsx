@@ -278,7 +278,7 @@ const ContactUsDetailsPage: React.FC = () => {
             Contact Information
           </h2>
           <div className='relative'>
-            <pre className='bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
               {contactInfoCode}
             </pre>
             <CopyButton text={contactInfoCode} codeKey='contactInfo' />
@@ -290,7 +290,7 @@ const ContactUsDetailsPage: React.FC = () => {
             Contact Form Logic Part
           </h2>
           <div className='relative'>
-            <pre className='bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
               {contactLogicCode}
             </pre>
             <CopyButton text={contactLogicCode} codeKey='contactLogic' />
@@ -302,7 +302,7 @@ const ContactUsDetailsPage: React.FC = () => {
             Contact Form UI Part
           </h2>
           <div className='relative'>
-            <pre className='bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap  max-sm:text-[0.55rem]'>
               {contactUICode}
             </pre>
             <CopyButton text={contactUICode} codeKey='contactUI' />

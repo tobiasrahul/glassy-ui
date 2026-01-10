@@ -80,7 +80,7 @@ const CustomTextArea: React.FC = () => {
       />
 
       <div className='mt-4 bg-slate-400 p-2 rounded'>
-        <pre className='text-sm max-sm:text-[0.55rem]'>
+        <pre className='notranslate text-sm max-sm:text-[0.55rem]'>
           {`<textarea
   style={{
     backgroundColor: '${themeColors.bg.includes('linear-gradient') ? 'transparent' : themeColors.bg}',
@@ -191,7 +191,7 @@ const TextareaDetailPage: React.FC = () => {
           <h2 className='text-2xl text-emerald-200 font-bold mb-4'>
             Basic Usage
           </h2>
-          <pre className='bg-slate-400 text-white p-4 rounded-lg overflow-x-auto'>
+          <pre className='notranslate bg-slate-400 text-white p-4 rounded-lg overflow-x-auto'>
             {`function App() {
   return (
     <textarea

@@ -82,7 +82,7 @@ const BackToTopDetailsPage: React.FC = () => {
         <div className={`border rounded-lg bg-pink-200 p-8 mb-8 relative`}>
           <h2 className='text-3xl font-bold mb-6 text-black'>Basic Usage</h2>
           <div className='relative'>
-            <pre className='bg-lime-200 text-black p-6 rounded-lg overflow-x-auto blackspace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-lime-200 text-black p-6 rounded-lg overflow-x-auto blackspace-pre-wrap max-sm:text-[0.55rem]'>
               {backToTopCode}
             </pre>
             <CopyButton text={backToTopCode} codeKey='backToTop' />

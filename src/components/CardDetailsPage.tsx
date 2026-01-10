@@ -183,7 +183,7 @@ const CardDetailsPage: React.FC = () => {
       <section className='mb-12'>
         <h2 className='text-2xl font-bold mb-4 text-gray-800'>Basic Usage</h2>
         <div className='bg-white bg-opacity-30 backdrop-filter backdrop-blur-md border border-white border-opacity-20 rounded-lg p-6 max-sm:px-1'>
-          <pre className='bg-green-300 text-black p-4 rounded-lg overflow-x-auto relative max-sm:text-[0.55rem]'>
+          <pre className='notranslate bg-green-300 text-black p-4 rounded-lg overflow-x-auto relative max-sm:text-[0.55rem]'>
             {`import { Card } from './components/Card';
 
 function Example() {
@@ -275,7 +275,7 @@ function Example() {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
               <CustomCardPreview />
               <div className='relative'>
-                <pre className='bg-emerald-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words max-sm:text-[0.55rem]'>
+                <pre className='notranslate bg-emerald-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words max-sm:text-[0.55rem]'>
                   {updateCustomCode()}
                 </pre>
                 <CopyButton text={updateCustomCode()} codeKey='customStyling' />
@@ -299,8 +299,8 @@ function Example() {
             <div className='lg:w-2/3'>
               <h3 className='text-xl font-semibold mb-4 text-gray-800'>Code</h3>
               <div className='relative'>
-                <pre className='bg-lime-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words max-sm:text-[0.55rem]'>
-                  <code>
+                <pre className='notranslate bg-lime-200 text-black p-4 rounded-lg overflow-x-auto text-sm max-h-[400px] whitespace-pre-wrap break-words max-sm:text-[0.55rem]'>
+                  <code className='notranslate'>
                     {`const GlassmorphicCreditCard: React.FC = () => (
   <div className="w-96 h-56 bg-gradient-to-br from-purple-100 
     to-blue-300 rounded-xl overflow-hidden relative p-8 

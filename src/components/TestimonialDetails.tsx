@@ -83,7 +83,7 @@ const TestimonialDetails: React.FC = () => {
         <div className={`${getGlassyClasses()} p-6 mb-14 relative`}>
           <h2 className='text-3xl font-bold mb-6 text-white'>Basic Usage</h2>
           <div className='relative'>
-            <pre className='bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+            <pre className='notranslate bg-gray-800 text-white p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
               {testimonialCode}
             </pre>
             <CopyButton text={testimonialCode} codeKey='testimonial' />

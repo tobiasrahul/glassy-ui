@@ -157,7 +157,7 @@ const AccordionDetails: React.FC = () => {
           <div className={`${getGlassyClasses()} p-8 mb-8 relative`}>
             <h2 className='text-3xl font-bold mb-6 text-black'>Basic Usage</h2>
             <div className='relative'>
-              <pre className='bg-lime-200 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+              <pre className='notranslate bg-lime-200 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
                 {basicUsageCode}
               </pre>
               <CopyButton text={basicUsageCode} codeKey='basicUsage' />
@@ -189,7 +189,7 @@ const AccordionDetails: React.FC = () => {
 
             {/* Usage Code Section */}
             <div className='relative mt-8'>
-              <pre className='bg-lime-200 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+              <pre className='notranslate bg-lime-200 text-black p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
                 {accordionUsageCode}
               </pre>
               <CopyButton text={accordionUsageCode} codeKey='accordionUsage' />
@@ -226,7 +226,7 @@ const AccordionDetails: React.FC = () => {
 
             {/* Collapsible Usage Code Section */}
             <div className='relative mt-8'>
-              <pre className='bg-lime-200 text-balck p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
+              <pre className='notranslate bg-lime-200 text-balck p-6 rounded-lg overflow-x-auto whitespace-pre-wrap max-sm:text-[0.55rem]'>
                 {collapsibleAccordionCode}
               </pre>
               <CopyButton

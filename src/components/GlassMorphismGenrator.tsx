@@ -291,8 +291,8 @@ const GlassmorphismGenerator: React.FC = () => {
             </div>
 
             {/* Code Preview */}
-            <pre className='bg-blue-900 h-[35vh] p-4 rounded-md overflow-x-auto mt-4 border border-gray-300 shadow-inner'>
-              <code className='text-sm text-gray-100'>
+            <pre className='notranslate bg-blue-900 h-[35vh] p-4 rounded-md overflow-x-auto mt-4 border border-gray-300 shadow-inner'>
+              <code className='notranslate text-sm text-gray-100'>
                 {activeTab === 'custom' ? cssCode : tailwindCode}
               </code>
             </pre>
